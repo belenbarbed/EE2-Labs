@@ -23,6 +23,7 @@ public:
 	// constructors
 	Triangle();
 	Triangle(const Point& A_in, const Point& B_in, const Point& C_in);
+	Triangle(const Triangle& T);
 
 	//methods
 	double perimeter();							// returns perimeter value

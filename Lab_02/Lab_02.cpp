@@ -1,5 +1,5 @@
 /*
- * Labs_01.cpp
+ * Labs_02.cpp
  *
  *  Created on: 12 Oct 2016
  *      Author: bb2115
@@ -14,25 +14,16 @@ using namespace std;
 
 void testClass();
 void points_and_lines();
-int farthest_point(vector <Point>& a);
+
+void do_farthest_point();
+int  farthest_point(vector <Point>& a);
+
+void do_closest_point();
+int  closest_point(vector <Point>& a);
 
 int main() {
 
-	vector <Point> a;
-	double x, y;
-
-	do{
-		cout << "Enter another point (and (0, 0) when finished):" << endl;
-		cin >> x >> y;
-		Point p(x, y);
-		a.push_back(p);
-	} while (x != 0 && y != 0);
-
-	a.pop_back();
-
-	int max_index = farthest_point(a);
-	cout << "The index of the farthest point from the origin is: " << max_index << endl;
-	cout << "This point is: " << a[max_index].str() << endl;
+	do_closest_point();
 
 	return 0;
 }
@@ -76,6 +67,26 @@ void points_and_lines(){
 
 }
 
+void do_farthest_point(){
+
+	vector <Point> a;
+	double x, y;
+
+	do{
+		cout << "Enter another point (and (0, 0) when finished):" << endl;
+		cin >> x >> y;
+		Point p(x, y);
+		a.push_back(p);
+	} while (!( x == 0 && y == 0));
+
+	a.pop_back();
+
+	int max_index = farthest_point(a);
+	cout << "The index of the farthest point from the origin is: " << max_index << endl;
+	cout << "This point is: " << a[max_index].str() << endl;
+
+}
+
 int farthest_point(vector <Point>& a){
 
 	if((a.size() == 0) || (a.size() == 1)){
@@ -94,5 +105,13 @@ int farthest_point(vector <Point>& a){
 	}
 
 	return max_index;
+
+}
+
+void do_closest_point(){
+
+}
+
+int closest_point(vector <Point>& a){
 
 }

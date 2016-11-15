@@ -14,17 +14,15 @@ Triangle::Triangle(const Point& A_in, const Point& B_in, const Point& C_in): A(A
 	update_perimeter();
 }
 
+Triangle::Triangle(const Triangle& T): A(T.A), B(T.B), C(T.C), perimeter_val(T.perimeter_val){}
+
 
 void Triangle::update_perimeter(){
-
 	perimeter_val = A.distance_with(B) + B.distance_with(C) + C.distance_with(A);
-
 }
 
 double Triangle::perimeter(){
-
 	return perimeter_val;
-
 }
 
 void Triangle::translate(Point p){
