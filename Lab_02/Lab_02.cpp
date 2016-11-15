@@ -114,4 +114,22 @@ void do_closest_point(){
 
 int closest_point(vector <Point>& a){
 
+		if((a.size() == 0) || (a.size() == 1)){
+		return 0;
+	}
+
+
+	double min = 0;
+	int min_index = 0;
+
+	for(int i = 0; i < a.size(); i++){
+		// FIX THIS SHIT
+		if(a[i].<){
+			min_index = i;
+			min = a[i].get_distance();
+		}
+	}
+
+	return max_index;
+
 }
