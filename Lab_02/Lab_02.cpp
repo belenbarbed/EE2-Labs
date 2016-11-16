@@ -6,6 +6,9 @@
  */
 
 #include <iostream>
+#include <sstream>
+#include <fstream>
+#include <cstdlib>
 #include <vector>
 
 #include "PointClass.hpp"
@@ -110,26 +113,49 @@ int farthest_point(vector <Point>& a){
 
 void do_closest_point(){
 
+	vector <Point> a;
+	double x, y;
+
+	ifstream infile;
+	infile.open("inputpoints.txt");
+	if(!infile.is_open()){
+		cout << "Could not open input file." << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	while(infile >> x >> y){
+		Point tmp(x, y);
+		a.push_back(tmp);
+	}
+
+	infile.close();
+
+	int min_index = closest_point(a);
+	cout << "The index of the closest point from the origin is: " << min_index << endl;
+	cout << "This point is: " << a[min_index].str() << endl;
+
 }
 
 int closest_point(vector <Point>& a){
 
-		if((a.size() == 0) || (a.size() == 1)){
+	if((a.size() == 0) || (a.size() == 1)){
 		return 0;
 	}
-
 
 	double min = 0;
 	int min_index = 0;
 
-	for(int i = 0; i < a.size(); i++){
+	for(int i = 0; i < (a.size() - 1); i++){
 		// FIX THIS SHIT
-		if(a[i].<){
+		if(operator<(a[i], a[i+1])){
 			min_index = i;
 			min = a[i].get_distance();
+		} else if (operator<(a[i+1], a[i])) {
+			min_index = i + 1;
+			min = a[i+1].get_distance();
 		}
 	}
 
-	return max_index;
+	return min_index;
 
 }

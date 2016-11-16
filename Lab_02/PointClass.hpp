@@ -45,7 +45,7 @@ public:
 	std::string str();					// returns string representation of point coordinates as (x, y)
 	
 	// operators
-	bool operator==(const Point& p1, const Point& p2);
+	//bool operator==(const Point& p2);
 
 	// friend functions
 	friend bool operator<(const Point& p1, const Point& p2);
