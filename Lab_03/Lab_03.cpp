@@ -40,15 +40,23 @@ int main() {
 	getline(cin, file2);
 	file2 += ".txt";
 	
+	bool order = 0;
+	cout << "Please enter 1 if the second vector is ordered and 0 if it isn't" << endl;
+	cin >> order;
+	
 	vector <Point> v1, v2, v3;
 	
 	file_to_vector(v1, file1);
 	file_to_vector(v2, file2);
 	
-	pointdup(v1, v2, v3);
+	pointdup(v1, v2, v3, order);
 	
-	cout << "The points in common are:" << endl;
-	print_vector(v3);
+	if(v3.size()){
+		cout << "The points in common are:" << endl;
+		print_vector(v3);
+	} else {
+		cout << "No points in common were found" << endl;
+	}
 	
 	return 0;
 }
@@ -82,7 +90,7 @@ void file_to_vector(vector <Point>& v, string filename){
 	ifstream infile;
 	infile.open( filename.c_str() );
 	if(!infile.is_open()){
-		cout << "Could not open input file." << endl;
+		cout << "Could not open input file with name " << filename << endl;
 		exit(EXIT_FAILURE);
 	}
 
@@ -154,6 +162,14 @@ int member_point_binsearch(const Point& p, vector <Point>& v){
 
 void pointdup(vector <Point>& v1, vector <Point>& v2, vector <Point>& v_out, bool order){
 	
-	v_out = v1;
+	for(int i = 0; i < v1.size(); i++){
+		for(int j = 0; j < v2.size(); j++){
+			
+			if((v1[i] == v2[j]) && (member_point(v_out, v1[i]) != v_out.size())){
+				v_out.push_back(v1[i]);
+			}
+			
+		}
+	}
 	
 }
