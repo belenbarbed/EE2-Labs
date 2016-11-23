@@ -50,6 +50,7 @@ public:
 
 	// friend functions
 	friend bool operator<(const Point& p1, const Point& p2);
+	friend bool operator>(const Point& p1, const Point& p2);
 	friend bool operator==(const Point& p1, const Point& p2);
 	friend std::ostream& operator<<(std::ostream& out, const Point& p);
 

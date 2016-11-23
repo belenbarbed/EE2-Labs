@@ -22,6 +22,7 @@ void file_to_vector(vector <Point>& v);
 int farthest_point(vector <Point>& a);
 int closest_point(vector <Point>& a);
 
+int member_point(const Point& p, vector <Point>& v, bool order = 0);
 int member_point_unordsearch(const Point& p, vector <Point>& v);
 int member_point_binsearch(const Point& p, vector <Point>& v);
 
@@ -34,11 +35,12 @@ int main() {
 	cout << "Enter the point to look for in the vector" << endl;
 	cin >> x >> y;
 	Point p(x, y);
+	int result = member_point(p, v);
 	
-	if(member_point_unordsearch(p, v) == v.size()){
+	if(result == v.size()){
 		cout << "The point was not found" << endl;
 	} else {
-		cout << "The point is in the file, in index " << member_point_unordsearch(p, v) << endl;
+		cout << "The point is in the file, in index " << result << endl;
 	}
 
 	return 0;
@@ -123,6 +125,16 @@ int closest_point(vector <Point>& a){
 	return min_index;
 }
 
+int member_point(const Point& p, vector <Point>& v, bool order){
+	
+	if(order){
+		return member_point_binsearch(p, v);
+	} else {
+		return member_point_unordsearch(p, v);
+	}
+	
+}
+
 int member_point_unordsearch(const Point& p, vector <Point>& v){
 	
 	for(int i = 0; i < v.size(); i++){
@@ -137,6 +149,26 @@ int member_point_unordsearch(const Point& p, vector <Point>& v){
 
 int member_point_binsearch(const Point& p, vector <Point>& v){
 	
+	int look = v.size() / 2;
 	
+	if((v.size() < 2) && !(p == v[0])){
+		return v.size();
+	}	
+	
+	if(p == v[look]){
+		return look;
+	}
+	
+	if(p < v[look]){
+		vector <Point> sub(&v[0], &v[look]);
+		// vector <Point> u(v.begin(), v.begin() + look);
+		member_point_binsearch(p, v);
+	}
+	
+	if(p > v[look]){
+		vector <Point> sub(&v[look + 1], &v[v.size() - 1]);
+		// vector <Point> u(v.begin() + look, v.end());
+		member_point_binsearch(p, v);
+	}
 	
 }
