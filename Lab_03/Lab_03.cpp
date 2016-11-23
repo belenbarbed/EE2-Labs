@@ -61,28 +61,6 @@ int main() {
 	return 0;
 }
 
-void testClass(){
-
-	double a, b, c, d;
-	cout << "Enter a point to do the test on" << endl;
-	cin >> a >> b;
-	Point p(a, b);
-
-	c = p.get_distance();
-
-	Point q (1, 1);
-	d = p.distance_with(q);
-
-	cout << "The point you entered was " << p << endl;
-	cout << "The distance to the origin is " << c << " units" << endl;
-
-	cout << "The distance to the point " << q << " is " << d << " units" << endl;
-
-	p.make_sym();
-	cout << "The symmetric to the point is " << p << endl;
-
-}
-
 void file_to_vector(vector <Point>& v, string filename){
 	
 	double x, y;
@@ -105,9 +83,7 @@ void file_to_vector(vector <Point>& v, string filename){
 void print_vector(vector <Point>& v){
 
 	for(int i = 0; i < v.size(); i++){
-		
 		cout << v[i] << endl;
-		
 	}
 	
 }
@@ -165,7 +141,7 @@ void pointdup(vector <Point>& v1, vector <Point>& v2, vector <Point>& v_out, boo
 	for(int i = 0; i < v1.size(); i++){
 		for(int j = 0; j < v2.size(); j++){
 			
-			if((v1[i] == v2[j]) && (member_point(v_out, v1[i]) != v_out.size())){
+			if((v1[i] == v2[j]) && (member_point(v1[i], v_out, order) == v_out.size())){
 				v_out.push_back(v1[i]);
 			}
 			
