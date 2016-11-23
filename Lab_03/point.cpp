@@ -1,15 +1,16 @@
 /*
- * PointClass.cpp
+ * point.cpp
  *
  *  Created on: 12 Oct 2016
  *      Author: bb2115
  */
 
-#include "PointClass.hpp"
+#include "point.hpp"
+#include <cmath>
 using namespace std;
 
 // CONSTRUCTORS
-Point::Point(): x(0), y(0), distance(0){}
+//Point::Point(): x(0), y(0), distance(0){}
 
 Point::Point(double x_in, double y_in): x(x_in), y(y_in){
 	update_distance();
@@ -43,11 +44,11 @@ double Point::get_distance() const {
 
 // METHODS
 void Point::update_distance(){
-	distance = sqrt ( pow(x, 2) + pow(y, 2) );
+	distance = sqrt ( pow(abs(x), 2) + pow(abs(y), 2) );
 }
 
 double Point::distance_with(Point a){
-	return sqrt( pow( (a.x - x) , 2) + pow( (a.y - y) , 2) );
+	return sqrt( pow( (abs(a.x - x)) , 2) + pow( (abs(a.y - y)) , 2) );
 }
 
 void Point::make_sym(){
@@ -67,12 +68,11 @@ string Point::str(){
 	return ss.str();
 }
 
-// OPERATORS
-//bool operator==(const Point& p2){
-//	return ((this.x == p2.x) && (this.y == p2.y));
-//}
-
 // FRIENDS
 bool operator<(const Point& p1, const Point& p2){
-	return (p1.distance < p2.distance);
+	return (p1.get_distance() < p2.get_distance());
+}
+
+bool operator==(const Point& p1, const Point& p2){
+	return ((p1.x == p2.x) && (p1.y == p2.y));
 }

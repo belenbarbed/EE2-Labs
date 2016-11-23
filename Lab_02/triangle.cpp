@@ -1,11 +1,11 @@
 /*
- * TriangleClass.cpp
+ * triangle.cpp
  *
  *  Created on: 2 Nov 2016
  *      Author: bb2115
  */
 
-#include "TriangleClass.hpp"
+#include "triangle.hpp"
 
 
 Triangle::Triangle(): A(), B(), C(), perimeter_val(0){}

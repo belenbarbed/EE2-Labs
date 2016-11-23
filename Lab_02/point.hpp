@@ -1,12 +1,12 @@
 /*
- * PointClass.hpp
+ * point.hpp
  *
  *  Created on: 12 Oct 2016
  *      Author: bb2115
  */
 
-#ifndef POINTCLASS_HPP_
-#define POINTCLASS_HPP_
+#ifndef POINT_HPP_
+#define POINT_HPP_
 
 #include <stdio.h>
 #include <math.h>
@@ -43,14 +43,12 @@ public:
 	void make_sym();					// transforms the point to its symmetric to the origin (reverse sign)
 	void translate(Point a);			// translates the point with respect to one passed as argument
 	std::string str();					// returns string representation of point coordinates as (x, y)
-	
-	// operators
-	//bool operator==(const Point& p2);
 
 	// friend functions
 	friend bool operator<(const Point& p1, const Point& p2);
+	friend bool operator==(const Point& p1, const Point& p2);
 
 };
 
 
-#endif /* POINTCLASS_HPP_ */
+#endif /* POINT_HPP_ */

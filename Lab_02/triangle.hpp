@@ -1,14 +1,14 @@
 /*
- * TriangleClass.hpp
+ * triangle.hpp
  *
  *  Created on: 2 Nov 2016
  *      Author: bb2115
  */
 
-#ifndef TRIANGLECLASS_HPP_
-#define TRIANGLECLASS_HPP_
+#ifndef TRIANGLE_HPP_
+#define TRIANGLE_HPP_
 
-#include "PointClass.hpp"
+#include "point.hpp"
 
 
 class Triangle {
@@ -35,4 +35,4 @@ public:
 
 
 
-#endif /* TRIANGLECLASS_HPP_ */
+#endif /* TRIANGLE_HPP_ */
