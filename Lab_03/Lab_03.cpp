@@ -31,15 +31,25 @@ int member_point_binsearch(const Point& p, vector <Point>& v);
 void pointdup(vector <Point>& v1, vector <Point>& v2, vector <Point>& v_out, bool order = 0);
 
 int main() {
-
+	
+	string file1, file2;
+	cout << "Write the name of the first file:" << endl;
+	getline(cin, file1);
+	file1 += ".txt";
+	cout << "Write the name of the second file:" << endl;
+	getline(cin, file2);
+	file2 += ".txt";
+	
 	vector <Point> v1, v2, v3;
-	string file1 = "input1.txt";
-	string file2 = "input2.txt";
+	
 	file_to_vector(v1, file1);
 	file_to_vector(v2, file2);
 	
 	pointdup(v1, v2, v3);
-
+	
+	cout << "The points in common are:" << endl;
+	print_vector(v3);
+	
 	return 0;
 }
 
@@ -85,10 +95,10 @@ void file_to_vector(vector <Point>& v, string filename){
 }
 
 void print_vector(vector <Point>& v){
-	
+
 	for(int i = 0; i < v.size(); i++){
 		
-		
+		cout << v[i] << endl;
 		
 	}
 	
@@ -144,6 +154,6 @@ int member_point_binsearch(const Point& p, vector <Point>& v){
 
 void pointdup(vector <Point>& v1, vector <Point>& v2, vector <Point>& v_out, bool order){
 	
-	
+	v_out = v1;
 	
 }
