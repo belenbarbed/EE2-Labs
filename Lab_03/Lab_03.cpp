@@ -10,6 +10,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <vector>
+#include <string>
 
 #include "point.hpp"
 
@@ -17,7 +18,8 @@ using namespace std;
 
 void testClass();
 
-void file_to_vector(vector <Point>& v);
+void file_to_vector(vector <Point>& v, string filename);
+void print_vector(vector <Point>& v);
 
 int farthest_point(vector <Point>& a);
 int closest_point(vector <Point>& a);
@@ -26,22 +28,17 @@ int member_point(const Point& p, vector <Point>& v, bool order = 0);
 int member_point_unordsearch(const Point& p, vector <Point>& v);
 int member_point_binsearch(const Point& p, vector <Point>& v);
 
+void pointdup(vector <Point>& v1, vector <Point>& v2, vector <Point>& v_out, bool order = 0);
+
 int main() {
 
-	vector <Point> v;
-	file_to_vector(v);
+	vector <Point> v1, v2, v3;
+	string file1 = "input1.txt";
+	string file2 = "input2.txt";
+	file_to_vector(v1, file1);
+	file_to_vector(v2, file2);
 	
-	double x, y;
-	cout << "Enter the point to look for in the vector" << endl;
-	cin >> x >> y;
-	Point p(x, y);
-	int result = member_point(p, v);
-	
-	if(result == v.size()){
-		cout << "The point was not found" << endl;
-	} else {
-		cout << "The point is in the file, in index " << result << endl;
-	}
+	pointdup(v1, v2, v3);
 
 	return 0;
 }
@@ -68,12 +65,12 @@ void testClass(){
 
 }
 
-void file_to_vector(vector <Point>& v){
+void file_to_vector(vector <Point>& v, string filename){
 	
 	double x, y;
 
 	ifstream infile;
-	infile.open("inputpoints.txt");
+	infile.open( filename.c_str() );
 	if(!infile.is_open()){
 		cout << "Could not open input file." << endl;
 		exit(EXIT_FAILURE);
@@ -87,42 +84,14 @@ void file_to_vector(vector <Point>& v){
 	infile.close();
 }
 
-int farthest_point(vector <Point>& a){
-
-	if((a.size() == 0) || (a.size() == 1)){
-		return 0;
+void print_vector(vector <Point>& v){
+	
+	for(int i = 0; i < v.size(); i++){
+		
+		
+		
 	}
-
-
-	double max = 0;
-	int max_index = 0;
-
-	for(int i = 0; i < a.size(); i++){
-		if(a[i].get_distance() > max){
-			max_index = i;
-			max = a[i].get_distance();
-		}
-	}
-
-	return max_index;
-
-}
-
-int closest_point(vector <Point>& a){
-
-	if((a.size() < 2)){
-		return 0;
-	}
-
-	int min_index = 0;
-
-	for(int i = 0; i < a.size(); i++){
-		if( (a[i]) < (a[min_index]) ){
-			min_index = i;
-		} 
-	}
-
-	return min_index;
+	
 }
 
 int member_point(const Point& p, vector <Point>& v, bool order){
@@ -170,5 +139,11 @@ int member_point_binsearch(const Point& p, vector <Point>& v){
 		// vector <Point> u(v.begin() + look, v.end());
 		member_point_binsearch(p, v);
 	}
+	
+}
+
+void pointdup(vector <Point>& v1, vector <Point>& v2, vector <Point>& v_out, bool order){
+	
+	
 	
 }
