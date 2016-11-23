@@ -12,6 +12,7 @@
 #include <math.h>
 #include <string>
 #include <sstream>
+#include <iostream>
 
 
 class Point {
@@ -27,6 +28,9 @@ public:
 	Point();							// default constructor where x = y = 0
 	Point(double x_in, double y_in);	// constructor with initial x and y values
 	Point(const Point& a);				// copy constructor
+	
+	// destructor
+	~Point();
 	
 	//setters
 	void set_x(double x_in);			// set x coordinates
@@ -47,6 +51,7 @@ public:
 	// friend functions
 	friend bool operator<(const Point& p1, const Point& p2);
 	friend bool operator==(const Point& p1, const Point& p2);
+	friend std::ostream& operator<<(std::ostream& out, const Point& p);
 
 };
 
