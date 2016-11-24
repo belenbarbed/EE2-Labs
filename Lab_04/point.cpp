@@ -22,7 +22,9 @@ Point::Point(double x_in, double y_in): x(x_in), y(y_in){
 Point::Point(const Point& a): x(a.x), y(a.y), distance(a.distance){}
 
 // DESTRUCTOR
-Point::~Point(){}
+Point::~Point(){
+	cout << "Now deleting the point " << *this << endl;
+}
 
 // SETTERS
 void Point::set_x(double x_in){

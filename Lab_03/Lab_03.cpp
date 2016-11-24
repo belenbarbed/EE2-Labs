@@ -21,9 +21,6 @@ void testClass();
 void file_to_vector(vector <Point>& v, string filename);
 void print_vector(vector <Point>& v);
 
-int farthest_point(vector <Point>& a);
-int closest_point(vector <Point>& a);
-
 int member_point(const Point& p, vector <Point>& v, bool order = 0);
 int member_point_unordsearch(const Point& p, vector <Point>& v);
 int member_point_binsearch(const Point& p, vector <Point>& v);
