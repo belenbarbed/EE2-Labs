@@ -5,5 +5,5 @@
  *      Author: bb2115
  */
  
-#include "intvecotr.hpp"
+#include "intvector.hpp"
 

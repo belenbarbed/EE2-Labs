@@ -13,20 +13,21 @@
 #include <string>
 
 #include "point.hpp"
+#include "intvector.hpp"
 
 using namespace std;
 
 void file_to_vector(vector <Point>& v, string filename);
 void print_vector(vector <Point>& v);
 
-void file_to_pointer(vector <Point*>& v, string filename);
+void file_to_vector(vector <Point*>& v, string filename);
 void print_vector(vector <Point*>& v);
  
 int main(){
 
 	string filename = "inputpoints.txt";
 	vector <Point*> v_in;
-	file_to_pointer(v_in, filename);
+	file_to_vector(v_in, filename);
 	
 	print_vector(v_in);
 	
@@ -52,7 +53,7 @@ void file_to_vector(vector <Point>& v, string filename){
 	infile.close();
 }
 
-void file_to_pointer(vector <Point*>& v, string filename){
+void file_to_vector(vector <Point*>& v, string filename){
 	
 	double x, y;
 
