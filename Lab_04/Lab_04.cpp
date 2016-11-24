@@ -17,6 +17,8 @@
 
 using namespace std;
 
+void test_class();
+
 void file_to_vector(vector <Point>& v, string filename);
 void print_vector(vector <Point>& v);
 
@@ -32,6 +34,12 @@ int main(){
 	print_vector(v_in);
 	
 	return 0;
+}
+
+void test_class(){
+	
+	
+	
 }
 
 void file_to_vector(vector <Point>& v, string filename){

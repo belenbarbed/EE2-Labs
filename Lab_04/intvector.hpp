@@ -14,13 +14,14 @@ class intvector {
 private:
 	// member data
 	int* address;
-	int private_size;
-	int private_capacity;
+	int p_size;
+	int p_capacity;
+	
+	int actual[];
 	
 public:
 	// constructors
 	intvector();								// default(empty) constructor
-	
 	intvector(const intvector& a);				// copy constructor
 
 	// destructor
@@ -38,9 +39,9 @@ public:
 	void push_back(int i);						// adds a new element to the end f the vector
 	int at(int i);								// returns the value of the int at index i
 	
-	// friend operators
-	friend int operator[]();
-	friend int operator[]();
+	// operators
+	int &operator[](int i);
+	const int &operator[](int i)const;
 	
 };
 
