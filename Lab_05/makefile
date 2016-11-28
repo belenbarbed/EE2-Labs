@@ -12,5 +12,3 @@ $(EXECUTABLE): $(OBJECTS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
-
-

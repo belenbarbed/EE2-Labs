@@ -10,12 +10,12 @@
 
 #include "counter.hpp"
 
-class ModuloCounter{
+class ModuloCounter : public Counter{
 
 private:
 	// member data
 	int modulo;
-	Counter c;
+//	Counter c;
 
 public:
 	//constructors
@@ -28,14 +28,14 @@ public:
 
 
 	// getters
-	int get_count() const;
+//	int get_count() const;
 
 	// methods
 	bool increment();
-	void reset();
-
+//	void reset();
+	
 	// operators
-	friend std::ostream& operator<<(std::ostream& out, const ModuloCounter& c);
+//	friend std::ostream& operator<<(std::ostream& out, const ModuloCounter& c);
 
 };
 

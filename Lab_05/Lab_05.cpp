@@ -11,6 +11,8 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <time.h>
+#include <windows.h>
 
 #include "intvector.hpp"
 #include "stopwatch.hpp"
@@ -34,17 +36,13 @@ int main(){
 
 void test_class(){
 
-	Stopwatch clock1;
-	cout << clock1 << endl;
+	Stopwatch clock;
 
-	Stopwatch clock2(1, 30, 45);
-	cout << clock2 << endl;
-
-	Stopwatch clock3(0, 0, 120);
-	cout << clock3 << endl;
-
-	Stopwatch clock4(clock3);
-	cout << clock4 << endl;
+	while(true){
+		Sleep(1000);
+		clock.tick();
+		cout << clock << endl;
+	}
 
 	return;
 

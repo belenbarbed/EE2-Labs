@@ -15,7 +15,7 @@
 
 class Counter{
 
-private:
+protected:
 	// member data
 	int count;
 
