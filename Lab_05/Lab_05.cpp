@@ -12,7 +12,6 @@
 #include <vector>
 #include <string>
 
-#include "point.hpp"
 #include "intvector.hpp"
 #include "stopwatch.hpp"
 #include "counter.hpp"
@@ -21,12 +20,6 @@
 using namespace std;
 
 void test_class();
-
-void test_vector_input();
-void file_to_vector(vector <Point>& v, string filename);
-void print_vector(vector <Point>& v);
-void file_to_vector(vector <Point*>& v, string filename);
-void print_vector(vector <Point*>& v);
 
 void test_class_intvector();
 void print_first(const intvector& v);
@@ -84,72 +77,6 @@ void test_class_intvector(){
 	cout << "the int " << a << " is in vector tmp4 at index " << tmp4.find(a) << endl;
 
 	return;
-	
-}
-
-void test_vector_input(){
-
-	string filename = "inputpoints.txt";
-	vector <Point*> v_in;
-	file_to_vector(v_in, filename);
-
-	print_vector(v_in);
-
-}
-
-void file_to_vector(vector <Point>& v, string filename){
-	
-	double x, y;
-
-	ifstream infile;
-	infile.open( filename.c_str() );
-	if(!infile.is_open()){
-		cout << "Could not open input file with name " << filename << endl;
-		exit(EXIT_FAILURE);
-	}
-
-	while(infile >> x >> y){
-		Point tmp(x, y);
-		v.push_back(tmp);
-	}
-
-	infile.close();
-}
-
-void file_to_vector(vector <Point*>& v, string filename){
-	
-	double x, y;
-
-	ifstream infile;
-	infile.open( filename.c_str() );
-	if(!infile.is_open()){
-		cout << "Could not open input file with name " << filename << endl;
-		exit(EXIT_FAILURE);
-	}
-
-	while(infile >> x >> y){
-		
-		Point* tmp = new Point(x, y);
-		v.push_back(tmp);
-		
-	}
-
-	infile.close();
-}
-
-void print_vector(vector <Point>& v){
-
-	for(uint i = 0; i < v.size(); i++){
-		cout << v[i] << endl;
-	}
-	
-}
-
-void print_vector(vector <Point*>& v){
-
-	for(uint i = 0; i < v.size(); i++){
-		cout << *(v[i]) << endl;
-	}
 	
 }
 
