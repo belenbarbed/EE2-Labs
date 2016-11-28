@@ -17,31 +17,35 @@ private:
 	int p_size;
 	int p_capacity;
 	
-	int actual[];
+//	int actual[];
 	
 public:
 	// constructors
 	intvector();								// default(empty) constructor
+	intvector(int size);						// makes vector of passed size and fills it with zeroes
+	intvector(int n_items, int value);			// makes vector of passed size and fills it with passed value
 	intvector(const intvector& a);				// copy constructor
 
 	// destructor
 	~intvector();
 	
 	// setters
-	int set_size(int s);
-	int set_capacity(int c);
+	void set_size(int s);
+	void set_capacity(int c);
 	
 	// getters
-	int size();									// returns the current sixe of the vector
-	int capacity();								// returns the potential capacity of the vector
+	int size() const;							// returns the current sixe of the vector
+	int capacity() const;						// returns the potential capacity of the vector
 	
 	// methods
-	void push_back(int i);						// adds a new element to the end f the vector
-	int at(int i);								// returns the value of the int at index i
+	void push_back(int val);					// adds a new element to the end f the vector
+	const int& at(int i) const;					// returns the value of the int at index i
+	void print();								// prints out the state of the vector
 	
 	// operators
-	int &operator[](int i);
-	const int &operator[](int i)const;
+	int& operator[](int i);
+	const int& operator[](int i)const;
+	intvector& operator=(const intvector& v);
 	
 };
 
