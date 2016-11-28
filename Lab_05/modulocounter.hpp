@@ -22,7 +22,7 @@ public:
 	ModuloCounter(int m = 0);
 
 	// destructor
-
+	~ModuloCounter();
 
 	// setters
 
@@ -35,7 +35,7 @@ public:
 	void reset();
 
 	// operators
-
+	friend std::ostream& operator<<(std::ostream& out, const ModuloCounter& c);
 
 };
 

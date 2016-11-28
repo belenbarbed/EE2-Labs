@@ -50,6 +50,13 @@ void Stopwatch::tick(){
 	seconds.increment();
 	this->update();
 
+//	USE IF MODULOCOUNTER
+//	if(seconds.increment()){
+//		if(minutes.increment()){
+//			hours.increment();
+//		}
+//	}
+
 }
 
 void Stopwatch::reset(){

@@ -7,11 +7,13 @@
 
 #include "modulocounter.hpp"
 
+using namespace std;
+
 // CONSTRUCTORS
 ModuloCounter::ModuloCounter(int m): modulo(m){}
 
 // DESTRUCTORS
-
+ModuloCounter::~ModuloCounter(){}
 
 // SETTERS
 
@@ -23,8 +25,8 @@ int ModuloCounter::get_count() const{
 
 // METHODS
 bool ModuloCounter::increment(){
+	
 	c.increment();
-
 	if((modulo > 0) && (c.get_count() >= modulo)){
 		c.reset();
 		return true;
@@ -38,3 +40,7 @@ void ModuloCounter::reset(){
 }
 
 // OPERATORS
+ostream& operator<<(ostream& out, const ModuloCounter& c){
+	out << c.c;
+	return out;
+}

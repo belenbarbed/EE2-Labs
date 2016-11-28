@@ -38,13 +38,13 @@ void test_class(){
 	cout << clock1 << endl;
 
 	Stopwatch clock2(1, 30, 45);
-	cout << clock1 << endl;
+	cout << clock2 << endl;
 
 	Stopwatch clock3(0, 0, 120);
-	cout << clock1 << endl;
+	cout << clock3 << endl;
 
 	Stopwatch clock4(clock3);
-	cout << clock1 << endl;
+	cout << clock4 << endl;
 
 	return;
 

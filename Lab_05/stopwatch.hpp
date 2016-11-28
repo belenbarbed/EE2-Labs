@@ -23,6 +23,8 @@ private:
 	Counter hours;
 	Counter minutes;
 	Counter seconds;
+//	ModuloCounter minutes;
+//	ModuloCounter seconds;
 
 public:
 	// constructors
