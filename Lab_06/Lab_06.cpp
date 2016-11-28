@@ -10,10 +10,21 @@
 #include <complex> 
  
 #include "impedance_device.hpp"
+#include "ellipse.hpp"
 
 using namespace std;
 
+void test_impedances();
+void test_ellipses();
+
 int main(){
+	
+	test_ellipses();
+	
+	return 0;
+}
+
+void test_impedances(){
 	
 	vector<Impedance_Device*> circuit;
 	
@@ -67,5 +78,25 @@ int main(){
 		delete circuit[i];
 	}
 	
-	return 0;
+	return;
+}
+
+void test_ellipses(){
+	
+	Circle c(10);
+	c.set_axes(15, 20);
+	
+	vector<Ellipse*> e;
+	
+	for(int i = 0; i < e.size(); i++){
+		double new_x, new_y;
+		cout << "x: ";
+		cin >> new_x;
+		cout << "y: ";
+		cin >> new_y;
+		
+		e[i]->set_axes(new_x, new_y);
+	}
+	
+	return;
 }
