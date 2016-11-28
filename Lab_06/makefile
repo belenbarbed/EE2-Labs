@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=Lab_06.cpp impedance_device.cpp
+SOURCES=Lab_06.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=thing
 
