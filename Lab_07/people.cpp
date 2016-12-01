@@ -11,7 +11,6 @@
 
 using namespace std;
 
-
 //------------------------------------------
 // PERSON
 
@@ -29,5 +28,35 @@ string Person::name(){
 	return p_name;
 }
 
+// SETTERS
+
+
 // METHODS
 
+
+// OPERATORS
+ostream& operator<<(ostream& out, const Person& p){
+	out << p.p_name << " " << p.p_surname;
+	return out;
+}
+
+
+//------------------------------------------
+// COLLEGE MEMBER
+
+// CONSTRUCTORS
+
+
+// DESTRUCTOR
+
+
+// GETTERS
+
+
+// SETTERS
+
+
+// METHODS
+
+
+// OPERATORS

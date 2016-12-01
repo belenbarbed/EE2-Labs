@@ -5,6 +5,7 @@
  *      Author: bb2115
  */
  
+#include <iostream>
 #include <string>
  
 #ifndef PEOPLE_HPP_
@@ -28,23 +29,48 @@ public:
 	// getters
 	std::string name();
 	
+	// setters
+	
+	
 	// methods
 	
-};
-
-class CollegeMember : public Person {
+	
+	// operators
+	friend std::ostream& operator<<(std::ostream& out, const Person& p);
 	
 };
 
-class CollegeVisitor : public Person {
+class CollegeMember: Person {
+
+public:
+	// constructors
+	
+	
+	// destructor
+	
+
+	// getters
+	
+	
+	// setters
+	
+	
+	// methods
+	
+	
+	// operators
 	
 };
 
-class Student : public CollegeMember {
+class CollegeVisitor: Person {
 	
 };
 
-class Employee : public CollegeMember {
+class Student: CollegeMember {
+	
+};
+
+class Employee: CollegeMember {
 	
 };
 
