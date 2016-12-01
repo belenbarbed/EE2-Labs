@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=Lab_07.cpp
+SOURCES=Lab_07.cpp people.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=thing
 

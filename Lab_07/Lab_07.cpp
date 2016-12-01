@@ -5,11 +5,14 @@
  *      Author: bb2115
  */
 
+#include "people.hpp"
 #include <iostream>
 
 using namespace std;
 
 int main(){
+	
+	Person tmp()
 	
 	return 0;
 }
