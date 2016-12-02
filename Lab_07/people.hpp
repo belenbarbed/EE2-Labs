@@ -40,14 +40,15 @@ public:
 	
 };
 
-class CollegeMember: Person {
+class CollegeMember: public Person {
 
 public:
 	// constructors
-	
+	// CollegeMember();
+	// CollegeMember(std::string name_in, std::string surname_in);
 	
 	// destructor
-	
+	~CollegeMember();
 
 	// getters
 	
@@ -59,6 +60,7 @@ public:
 	
 	
 	// operators
+	friend std::ostream& operator<<(std::ostream& out, const CollegeMember& p);
 	
 };
 

@@ -48,7 +48,9 @@ ostream& operator<<(ostream& out, const Person& p){
 
 
 // DESTRUCTOR
-
+CollegeMember::~CollegeMember(){
+	
+}
 
 // GETTERS
 
