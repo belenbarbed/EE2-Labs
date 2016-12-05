@@ -8,9 +8,15 @@
 #ifndef SHAPE_HPP_
 #define SHAPE_HPP_
 
-
-
-
+class Shape {
+	
+protected:
+	p_perimeter;
+	
+public:
+	double perimeter();
+	
+};
 
 
 #endif /* SHAPE_HPP_ */
