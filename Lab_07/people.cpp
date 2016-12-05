@@ -11,7 +11,7 @@
 
 using namespace std;
 
-//------------------------------------------
+//----------------------------------------------------------
 // PERSON
 
 // CONSTRUCTORS
@@ -41,11 +41,21 @@ ostream& operator<<(ostream& out, const Person& p){
 }
 
 
-//------------------------------------------
+//-------------------------------------------------------------
 // COLLEGE MEMBER
 
 // CONSTRUCTORS
+CollegeMember::CollegeMember(){
+	Person::p_name = "";
+	Person::p_surname = "";
+	Person::p_age = 0;
+}
 
+CollegeMember::CollegeMember(std::string name_in, std::string surname_in){
+	Person::p_name = name_in;
+	Person::p_surname = surname_in;
+	Person::p_age = 0;
+}
 
 // DESTRUCTOR
 CollegeMember::~CollegeMember(){
@@ -62,3 +72,9 @@ CollegeMember::~CollegeMember(){
 
 
 // OPERATORS
+ostream& operator<<(ostream& out, const CollegeMember& p){
+	out << p.p_name << " " << p.p_surname;
+	return out;
+}
+
+//---------------------------------------------------------------

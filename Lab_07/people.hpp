@@ -13,12 +13,13 @@
 
 class Person {
 	
-protected:
+//protected:
+public:
 	std::string p_name;
 	std::string p_surname;
 	int p_age;
 	
-public:
+//public:
 	// constructors
 	Person();
 	Person(std::string name_in, std::string surname_in);
@@ -40,12 +41,12 @@ public:
 	
 };
 
-class CollegeMember: public Person {
+class CollegeMember: Person {
 
 public:
 	// constructors
-	// CollegeMember();
-	// CollegeMember(std::string name_in, std::string surname_in);
+	CollegeMember();
+	CollegeMember(std::string name_in, std::string surname_in);
 	
 	// destructor
 	~CollegeMember();

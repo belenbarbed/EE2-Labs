@@ -15,11 +15,13 @@
 
 using namespace std;
 
-void file_to_vector(vector <CollegeMember>& v, string filename);
+//void file_to_vector(vector <CollegeMember>& v, string filename);
+void file_to_vector(vector <Person>& v, string filename);
 
 int main(){
 	
-	vector<CollegeMember> v;
+	vector<Person> v;
+//	vector<CollegeMember> v;
 	string filename = "inputpeople.txt";
 	
 	file_to_vector(v, filename);
@@ -30,7 +32,7 @@ int main(){
 	
 	return 0;
 }
-
+/*
 void file_to_vector(vector <CollegeMember>& v, string filename){
 	
 	string name, surname;
@@ -45,6 +47,25 @@ void file_to_vector(vector <CollegeMember>& v, string filename){
 	while(infile >> name >> surname){
 		CollegeMember tmp(name, surname);
 		//CollegeMember* tmp = new CollegeMember(name, surname);
+		v.push_back(tmp);
+	}
+
+	infile.close();
+}*/
+
+void file_to_vector(vector <Person>& v, string filename){
+
+	string name, surname;
+
+	ifstream infile;
+	infile.open( filename.c_str() );
+	if(!infile.is_open()){
+		cout << "Could not open input file with name " << filename << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	while(infile >> name >> surname){
+		Person tmp(name, surname);
 		v.push_back(tmp);
 	}
 
