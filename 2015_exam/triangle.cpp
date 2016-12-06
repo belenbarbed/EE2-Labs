@@ -44,4 +44,8 @@ double Triangle::perimeter(){
 	return (A.distance_with(B) + B.distance_with(C) + C.distance_with(A));
 }
 
-// OPRATORS
+// OPERATORS
+ostream& operator<<(ostream& out, const Triangle& t){
+	out << "the triangle's vertices are " << t.A << ", " << t.B << " and " << t.C;
+	return out;
+}

@@ -20,13 +20,49 @@
 
 using namespace std;
 
+template<class Type>
+void print_vector(vector <Type>& v){
+	
+	for(int i = 0; i < v.size(); i++){
+		cout << v[i] << endl;
+	}
+	
+}
+
 void text_to_point(vector <Point>& v, string filename);
 void text_to_triangle(vector <Triangle>& v, string filename);
 void text_to_circle(vector <Circle>& v, string filename);
 
+
 int main() {
 	
-	cout << "this is working" << endl;
+	vector<Triangle> T;
+	vector<Circle> C;
+	vector<double> T_p, C_p;
+	
+	text_to_triangle(T, "info_triangle.txt");
+	text_to_circle(C, "info_circle.txt");
+	
+	for(int i = 0; i < T.size(); i++){
+		double tmp = T[i].perimeter();
+		T_p.push_back(tmp);
+	}
+	for(int i = 0; i < C.size(); i++){
+		double tmp = C[i].perimeter();
+		C_p.push_back(tmp);
+	}
+	
+	cout << endl;
+	
+	print_vector(T);
+	cout << "the perimeters of these triangles are " << endl;
+	print_vector(T_p);
+	
+	cout << endl;
+	
+	print_vector(C);
+	cout << "the circumferences of these circles are " << endl;
+	print_vector(C_p);
 	
 	return 0;
 }

@@ -41,3 +41,8 @@ double Circle::perimeter(){
 }
 
 // OPERATORS
+ostream& operator<<(ostream& out, const Circle& c){
+	out << "the circle's centre is " << c.centre << " and it has a radius of " << c.radius;
+	return out;
+}
+
