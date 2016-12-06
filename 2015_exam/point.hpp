@@ -16,7 +16,8 @@ private:
 	double distance;
 	
 public:
-	// constuctors
+	// constructors
+	Point();
 	Point(double x_in, double y_in);
 	Point(const Point& a);
 	
@@ -24,10 +25,12 @@ public:
 	~Point();
 	
 	// getters
-	
+	double get_x();
+	double get_y();
 	
 	// setters
-	
+	void set_x(double x_in);
+	void set_y(double y_in);
 	
 	// methods
 	void update_distance();
