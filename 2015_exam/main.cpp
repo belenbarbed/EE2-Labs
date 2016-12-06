@@ -21,13 +21,7 @@
 using namespace std;
 
 template<class Type>
-void print_vector(vector <Type>& v){
-	
-	for(int i = 0; i < v.size(); i++){
-		cout << v[i] << endl;
-	}
-	
-}
+void print_vector(vector <Type>& v);
 
 void text_to_point(vector <Point>& v, string filename);
 void text_to_triangle(vector <Triangle>& v, string filename);
@@ -126,5 +120,15 @@ void text_to_circle(vector <Circle>& v, string filename){
 	}
 
 	infile.close();
+}
+
+
+template<class Type>
+void print_vector(vector <Type>& v){
+	
+	for(int i = 0; i < v.size(); i++){
+		cout << v[i] << endl;
+	}
+	
 }
 
