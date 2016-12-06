@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp shape.cpp point.cpp triangle.cpp circle.cpp
+SOURCES=main.cpp point.cpp triangle.cpp circle.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=thing
 

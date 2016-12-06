@@ -10,11 +10,11 @@
 
 class Shape {
 	
-protected:
-	p_perimeter;
-	
 public:
-	double perimeter();
+
+	virtual double perimeter() = 0;
+	
+	virtual ~Shape(){}
 	
 };
 
